@@ -1,0 +1,70 @@
+.app-container {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  background-color: var(--bg-primary);
+  color: var(--text-main);
+  position: relative;
+}
+
+main {
+  flex: 1;
+}
+
+/* Pulse Highlight for Reservation section when triggered from navbar/hero */
+.reservation-card-wrapper.pulse-highlight {
+  animation: cardHighlight 1.8s ease-out;
+}
+
+@keyframes cardHighlight {
+  0% {
+    box-shadow: 0 0 0 0 rgba(212, 175, 55, 0.7);
+    border-color: var(--gold-400);
+  }
+  50% {
+    box-shadow: 0 0 40px 10px rgba(212, 175, 55, 0.35);
+    border-color: var(--gold-300);
+  }
+  100% {
+    box-shadow: var(--shadow-md);
+    border-color: var(--gold-border);
+  }
+}
+
+/* Floating Back to Top Button */
+.back-to-top-btn {
+  position: fixed;
+  bottom: 2rem;
+  left: 2rem;
+  width: 44px;
+  height: 44px;
+  border-radius: var(--radius-full);
+  background: rgba(18, 22, 29, 0.85);
+  border: 1px solid var(--gold-border);
+  color: var(--gold-300);
+  backdrop-filter: blur(12px);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  z-index: 850;
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.5);
+  transition: var(--transition-normal);
+  animation: fadeIn 0.25s ease;
+}
+
+.back-to-top-btn:hover {
+  background: var(--gold-500);
+  color: #0d0f13;
+  transform: translateY(-4px);
+  box-shadow: 0 12px 28px rgba(212, 175, 55, 0.35);
+}
+
+@media (max-width: 640px) {
+  .back-to-top-btn {
+    bottom: 1.5rem;
+    left: 1.5rem;
+    width: 38px;
+    height: 38px;
+  }
+}
